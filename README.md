@@ -8,6 +8,8 @@ and movies. With Directors having a one-to-many relationship with Movies and
 Movies has a one-to-one relationship with Directors.
 
 Directors Database looking like:
+
+
 Director Name | About
 ------------ | -------------
 Director 1 | About Director 1
