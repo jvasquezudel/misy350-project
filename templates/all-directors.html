@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %} All Directors {% endblock %}
+
+{% block content %}
+<h1>This page shows all directors</h1>
+
+{% if directors %}
+  <h2>we have data</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Director Name</th>
+        <th scope="col">About</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for director in directors %}
+        <tr>
+          <th scope="row">{{director.id}}</th>
+          <td>{{director.name}}</td>
+          <td>{{director.about}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% else %}
+  <h2>directors table is empty</h2>
+{% endif %}
+
+{% endblock %}
