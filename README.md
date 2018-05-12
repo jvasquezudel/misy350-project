@@ -19,7 +19,7 @@ Director 2 | About Director 1
 Movies Database looks like:
 
 Movie Name | Director | Release Date
------------- | -------------
+------------ | ------------- | -------------
 Movie 1 |  Director 1 | Release Date of Movie 1
 Movie 2 |  Director 2 | Release Date of Movie 2
 
