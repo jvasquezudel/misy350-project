@@ -33,3 +33,21 @@ The activate the virtual environment by typing (in Windows powershell):
 ```
 venv/scripts/activate
 ```
+
+Followed by installing the packages:
+
+```
+pip install -r requirements.txt
+```
+
+Initialize the database:
+
+```
+python manage.py deploy
+```
+
+And finally running the server with the debugger:
+
+```
+python manage.py runserver -d
+```
