@@ -12,8 +12,8 @@ Directors Database looks like:
 
 Director Name | About | Movies
 ------------ | ------------- | -------------
-Director 1 | About Director 1 | Movies
-Director 2 | About Director 2 | Movies
+Director 1 | About Director 1 | Movies of Director 1
+Director 2 | About Director 2 | Movies of Director 2
 
 
 Movies Database looks like:
