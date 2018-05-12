@@ -10,10 +10,10 @@ Movies has a one-to-one relationship with Directors.
 Directors Database looks like:
 
 
-Director Name | About
------------- | -------------
-Director 1 | About Director 1
-Director 2 | About Director 1
+Director Name | About | Movies
+------------ | ------------- | -------------
+Director 1 | About Director 1 | Movies
+Director 2 | About Director 2 | Movies
 
 
 Movies Database looks like:
