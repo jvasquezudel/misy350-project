@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Add Movies{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="mt-3">Add Movie:</h1>
+  <form action="/movie/add" method="post">
+    <div class="form-group">
+      <label>Movie Name</label>
+      <input class="form-control" name="name">
+    </div>
+    <div class="form-group">
+      <label>Movie Budget</label>
+      <input class="form-control" name="budget">
+    </div>
+    <div class="form-group">
+      <label>Movie Director</label>
+      <select class="form-control" name="director">
+        {% for director in directors %}
+          <option>{{director.name}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      Director not in list <a href="/director/add" class="btn btn-success" role="button" aria-disabled="true">Add Director</a>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Movie</button>
+  </form>
+</div>
+
+{% endblock %}

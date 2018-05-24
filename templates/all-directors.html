@@ -2,16 +2,22 @@
 {% block title %} All Directors {% endblock %}
 
 {% block content %}
-<h1>This page shows all directors</h1>
+<div class="container">
+   <h1 class="mt-3">Directors:</h1>
+
+  <div class="row bottom-margin">
+  <a href="/director/add" class="btn btn-primary" role="button" aria-disabled="true">Add Director</a>
+  </div>
+
 
 {% if directors %}
-  <h2>we have data</h2>
   <table class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
         <th scope="col">Director Name</th>
         <th scope="col">About</th>
+        <th scope="col">Edit/Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -20,13 +26,18 @@
           <th scope="row">{{director.id}}</th>
           <td>{{director.name}}</td>
           <td>{{director.about}}</td>
+          <td>
+            <a href="/director/edit/{{director.id}}" class="btn btn-primary">Edit</a>
+            <a href="/director/delete/{{director.id}}" class="btn btn-danger">Delete</a>
+          </td>
         </tr>
       {% endfor %}
     </tbody>
   </table>
 
 {% else %}
-  <h2>directors table is empty</h2>
+  <h2>Directors table is empty</h2>
 {% endif %}
 
+</div>
 {% endblock %}

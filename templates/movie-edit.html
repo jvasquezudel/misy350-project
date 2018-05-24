@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %} Edit Movies {% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="mt-3">Edit Movies:</h1>
+
+{% if movies == movies %}
+
+<form action="/movie/edit/{{movie.id}}" method="post">
+  <div class="form-group">
+    <label>Movie Name</label>
+    <input class="form-control" name="name" value="{{movie.name}}">
+  </div>
+  <div class="form-group">
+    <label>Director Budget</label>
+    <input class="form-control" name="budget" value="{{movie.budget}}">
+  </div>
+  <div class="form-group">
+    <label>Artist</label>
+    <select class="form-control" name="director">
+      {% for director in directors %}
+        {% if director == movie.director %}
+          <option selected="selected">{{director.name}}</option>
+        {% else %}
+          <option>{{director.name}}</option>
+        {% endif %}
+      {% endfor %}
+    </select>
+  </div>
+  <div class="form-group">
+    Director not list <a href="/director/add" class="btn btn-success" role="button" aria-disabled="true">Add Director</a>
+  </div>
+  <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+{% else %}
+  <h2>Movies not existing</h2>
+{% endif %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %} All Movies {% endblock %}
+
+{% block content %}
+<div class="container">
+   <h1 class="mt-3">Movies:</h1>
+
+  <div class="row bottom-margin">
+    <a href="/movie/add" class="btn btn-primary" role="button" aria-disabled="true">Add Movie</a>
+  </div>
+
+{% if movies %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Movie Name</th>
+        <th scope="col">Director</th>
+        <th scope="col">Budget</th>
+        <th scope="col">Edit/Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for movies in movies %}
+        <tr>
+          <th scope="row">{{movies.id}}</th>
+          <td>{{movies.name}}</td>
+          <td>{{movies.director.name}}</td>
+          <td>{{movies.budget}}</td>
+          <td>
+            <a href="/movie/edit/{{movies.id}}" class="btn btn-primary">Edit</a>
+            <a href="/movie/delete/{{movies.id}}" class="btn btn-danger">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% else %}
+  <h2>Movies table is empty</h2>
+{% endif %}
+
+</div>
+
+{% endblock %}
